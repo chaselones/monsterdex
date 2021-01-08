@@ -31,6 +31,7 @@ class App extends Component{
         {this.state.monsters.map(monster => (
           <p key={monster.id}>{ monster.name }</p>
         ))}
+
         <button onClick={()=> {
           return this.setState({
             monsters:
@@ -46,6 +47,7 @@ class App extends Component{
             console.log("TOAST")
             );
         }}>click me!</button>
+        
       </div>
     );
   }
