@@ -6,23 +6,14 @@ class App extends Component{
     super();
 
     this.state = {
-      monsters: [
-        {
-          id: 1,
-          name: "Frankenstein"
-        },
-
-        {
-          id: 2,
-          name: "Dracula"
-        },
-      
-        {
-          id:3,
-          name: "WolfMan"
-        }
-      ]
+      monsters: []
     }
+  }
+
+  componentDidMount(){
+    fetch('http://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(users => this.setState({ monsters: users }))
   }
 
   render(){
@@ -47,9 +38,9 @@ class App extends Component{
             console.log("TOAST")
             );
         }}>click me!</button>
-        
+
       </div>
     );
   }
 }
-export default App;
+export default App
